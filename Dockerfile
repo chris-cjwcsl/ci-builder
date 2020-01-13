@@ -35,6 +35,8 @@ RUN curl -L ${RELEASE_ROOT}/${RELEASE_FILE} |tar xvz && \
     mv linux-amd64/helm /usr/bin/helm && \
     chmod +x /usr/bin/helm
 
+RUN  helm plugin install https://github.com/hypnoglow/helm-s3.git
+
 COPY --from=TERRAFORMV11 /bin/terraform /usr/bin/terraformv11
 COPY --from=TERRAFORMV12 /bin/terraform /usr/bin/terraformv12
 
