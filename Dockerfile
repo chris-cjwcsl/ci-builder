@@ -22,11 +22,17 @@ RUN apk add --update \
     git \
     bash \
     wget \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
     util-linux pciutils usbutils coreutils binutils findutils grep \
     ca-certificates \
     openssh-client \
     && curl -s -L https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl -o /usr/bin/kubectl \
     && chmod +x /usr/bin/kubectl
+
+RUN pip install shyaml
 
 RUN curl -s -L -o /usr/bin/aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator \
     && chmod +x /usr/bin/aws-iam-authenticator
