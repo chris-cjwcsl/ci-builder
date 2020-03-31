@@ -1,5 +1,5 @@
 #Losely based on devopsil/kops-docker
-FROM hashicorp/terraform:0.12.19 AS TERRAFORMV12
+FROM hashicorp/terraform:0.12.23 AS TERRAFORMV12
 FROM hashicorp/terraform:0.11.14 AS TERRAFORMV11
 
 
